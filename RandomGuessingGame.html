@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Random number game</title>
+  <link rel="stylesheet" type="text/css" href="C:\Users\Tom\Desktop\UT\Assignment2\style.css">
+</head>
+
+<body>
+    <script>
+        var randomNumber = getRandomNumber(10);
+        var guess;
+        var guessCount = 0
+        var correctGuess = false;
+
+        function getRandomNumber(upper){
+            var num = Math.floor(Math.random()*upper) + 1;
+            return num;
+        }
+        while(true){
+            guess = prompt("Thinking of a number between 1 and 10?");
+
+            guessCount += 1;
+            if (parseInt(guess) === randomNumber){
+                correctGuess = true;
+                break;
+            }
+        }
+
+        document.write('<h1>You guessed the number!');
+        document.write('it took you ' + guessCount + ' tries to guess the number ' + randomNumber);
+
+    </script>
+
+</body>
+</html>
